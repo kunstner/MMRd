@@ -1,6 +1,6 @@
-# MMR-D
+# MMR-D Detection Using Albayrak *et al.* (2020) Algorithm
 
-We implemented an algorithm to determine the mismacht repair status of a patient based on NGS data. The algorithm was described by [Albayrak *et al.* (2020)](https://doi.org/10.1200/PO.20.00185) and we provide an implementation written in R. The implementation was kindly provided by Vanessa Klauenberg. 
+We implemented an algorithm to determine the mismatch repair status of a patient based on NGS data. The algorithm was described by [Albayrak *et al.* (2020)](https://doi.org/10.1200/PO.20.00185) and we provide an implementation written in R. The implementation was kindly provided by Vanessa Klauenberg. 
 
 Our implementation works with hg19 and hg38 (GRCh38) and the analysis has to be restricted to covered regions in the genome by providing a bed file.
 
@@ -42,7 +42,7 @@ git clone https://github.com/your-username/mmr-detection.git
 
 ## Usage
 
-To run the MMR-D detection algorithm on your dataset, load the R scripts and pass your data to the function as shown below.
+To run the MMR-D detection algorithm on your dataset, load the R scripts and pass your data to the function as shown below. The code is provided as a RStudio project can be used independently of RStudio as well.
 
 `01_homopplymers.R`: This script can be used to extract homopolymers of a user-defined length (`N > 1`) from a given reference genome. The implementation is not optimized for memory usage. Therefore, we provided precomputed regions for hg19 (`res_hg19.Rdata`) and hg38 (`res_hg38.Rdata`) for homopolymers of length 5 or longer.
 
