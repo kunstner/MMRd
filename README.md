@@ -2,7 +2,7 @@
 
 We implemented an algorithm to determine the mismatch repair status of a patient based on NGS data. The algorithm was described by [Albayrak *et al.* (2020)](https://doi.org/10.1200/PO.20.00185) and we provide an implementation written in R. The implementation was kindly provided by Vanessa Klauenberg. 
 
-Our implementation works with hg19 and hg38 (GRCh38) and the analysis has to be restricted to covered regions in the genome by providing a bed file.
+Basically, our implementation can be applied to any genome version and the analysis has to be restricted to covered regions in the genome by providing a bed file. 
 
 ## Installation and dependencies
 

@@ -23,7 +23,7 @@ load (file = ".../total_length.Rdata")
 path <- "MAF"
 variants <- read.table(path, header = TRUE, sep = "\t")
 
-# check if the chromosomes start with 'chr', and add it if not
+# check if the chromosomes start with 'chr', and add it if not present
 variants <- variants %>%
     mutate(Chromosome = ifelse(grepl("^chr", Chromosome), Chromosome, paste0("chr", Chromosome)))
 
