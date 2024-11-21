@@ -15,17 +15,17 @@ library(writexl)
 # Data --------------------------------------------------------------------
 
 # load the result of 02_bedHomopolymers.r
-load(file = ".../matching_homopolymers.Rdata")
+load(file = "../../R/matching_homopolymers.Rdata")
 # load the total length of the sequenced chromosomes
-load (file = ".../total_length.Rdata")
+load (file = "../../R/total_length.Rdata")
 
 # read the .maf file
 path <- "MAF"
 variants <- read.table(path, header = TRUE, sep = "\t")
 
 # check if the chromosomes start with 'chr', and add it if not present
-variants <- variants %>%
-    mutate(Chromosome = ifelse(grepl("^chr", Chromosome), Chromosome, paste0("chr", Chromosome)))
+variants <- variants |>
+    dplyr::mutate(Chromosome = ifelse(grepl("^chr", Chromosome), Chromosome, paste0("chr", Chromosome)))
 
 # Determine MMR-Status ----------------------------------------------------
 
