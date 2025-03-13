@@ -15,12 +15,12 @@ library(writexl)
 # Data --------------------------------------------------------------------
 
 # load the result of 02_bedHomopolymers.r
-load(file = "../../R/matching_homopolymers.Rdata")
+load(file = "matching_homopolymers.Rdata")
 # load the total length of the sequenced chromosomes
-load (file = "../../R/total_length.Rdata")
+load (file = "total_length.Rdata")
 
 # read the .maf file
-path <- "MAF"
+path <- "../maf_request/"
 variants <- read.table(path, header = TRUE, sep = "\t")
 
 # check if the chromosomes start with 'chr', and add it if not present
@@ -88,15 +88,15 @@ for (i in tumors) {
     score <- 100 - score*100
 	score <- round(score,2)
     result <- "D"
-    print(paste("The patient with barcode ", i,
-                " is MMR-deficient, with an indel density of ",
+    print(paste("The patient with barcode", i,
+                "is MMR-deficient, with an indel density of ",
                 indel_density, " and a likelihood score of ", score))
   }else {
 	score <- round(score,2)
     result <- "P"
-    print(paste("The patient with barcode ", i,
-                " is MMR-proficient, with an indel density of ",
-                indel_density, " and a likelihood score of ", score))
+    print(paste("The patient with barcode", i,
+                "is MMR-proficient, with an indel density of",
+                indel_density, "and a likelihood score of ", score))
   }
 
   # save the outcome as a data frame

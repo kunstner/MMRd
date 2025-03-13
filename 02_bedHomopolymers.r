@@ -12,12 +12,12 @@ library(GenomicRanges)
 # Data --------------------------------------------------------------------
 
 # loading the bed file
-path <- "../data/xGenExomeResearchPanelV2_Exons.bed"
-x <- read.delim(path, header = FALSE, 
+path <- "../../data/xGenExomeResearchPanelV2_Exons.bed"
+x <- read.delim(path, header = FALSE,
                 col.names = c("chrom", "start", "end", "gene"))
-                
+
 # load the result data from the previous execution of 01_homopolymers.r
-load(file= "res.Rdata")
+load(file= "../../R/res_hg19.Rdata")
 
 # Filter homopolymers -----------------------------------------------------
 
